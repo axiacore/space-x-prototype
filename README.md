@@ -4,14 +4,16 @@ Calculating the Future: SpaceX's Travel Insurance.
 
 How much life insurance will cost for a trip to space? At [Axiacore](https://axiacore.com/), we developed an insurance calculator for SpaceX to provide tickets for space tourists. This case study details the development process, challenges in automating, and the consulting approach in the space travel industry.
 
+🎥 Watch how it works: https://www.loom.com/share/f7c36ee573784920af5b7878e18214b4
+
 ## Overview
 ------------
 
 The SpaceX Travel Insurance Prototype is a conversational AI-powered chat that assesses a client's psychological and physical conditions to determine their fitness for space travel. The chat is designed to ask general questions that help identify potential risks and provide a personalized insurance policy.
 
-To evaluate the client's physical condition, the chat uses the Army Physical Fitness Test (APFT) as a reference point. This test assesses an individual's physical fitness in four areas: push-ups, sit-ups, a 2-mile run, and a 1.5-mile ruck march.
+The chat uses the Army Physical Fitness Test (APFT) as a reference point to evaluate the client's physical condition. This test assesses an individual's physical fitness in four areas: push-ups, sit-ups, a 2-mile run, and a 1.5-mile ruck march.
 
-To evaluate the client's psychological condition, the chat uses the International Positive and Negative Affect Schedule (I-PANAS) in its short form. This widely used psychological assessment tool measures an individual's levels of positive and negative emotions, providing valuable insights into their mental well-being.
+To evaluate the client's psychological condition, the chat uses the short form of the International Positive and Negative Affect Schedule (I-PANAS). This widely used psychological assessment tool measures an individual's positive and negative emotions, providing valuable insights into their mental well-being.
 
 The chat's assessment results are then fed into our custom InsuranceCalculator service, which uses the collected data to calculate a unique insurance value for each client. This value is based on the client's individual physical and psychological conditions, as well as other factors relevant to space travel. 
 
