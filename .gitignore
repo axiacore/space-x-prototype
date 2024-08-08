@@ -1,0 +1,11 @@
+# Configuration files
+local_settings.py
+mydatabase
+
+# Folders
+.venv
+__pycache__
+/node_modules
+/static
+/uploads
+/app/static/css/dist

@@ -1,0 +1,36 @@
+<nav class="flex items-center flex-col-reverse gap-4 p-4 relative z-[5]" x-data>
+    {% include "svg/_astronaut.html" with svg_css_class="block size-8 fill-white shrink-0" %}
+    <div class="spacex-steps">
+        <div class="spacex-steps__item"
+             :class="{ 'spacex-steps__item--active': $store.steps.active == 1, 'spacex-steps__item--completed': $store.steps.active > 1 }">
+            <span class="spacex-steps__item-number" data-number="1">
+                {% include "svg/_spacex_step_1.html" with svg_css_class="spacex-steps__item-icon" %}
+            </span>
+            <span class="spacex-steps__item-text pt-0">1. Launchpad</span>
+        </div>
+        <hr class="spacex-steps__line">
+        <div class="spacex-steps__item"
+             :class="{ 'spacex-steps__item--active': $store.steps.active == 2, 'spacex-steps__item--completed': $store.steps.active > 2 }">
+            <span class="spacex-steps__item-number" data-number="2">
+                {% include "svg/_spacex_step_2.html" with svg_css_class="spacex-steps__item-icon" %}
+            </span>
+            <span class="spacex-steps__item-text">2. Medical Information</span>
+        </div>
+        <hr class="spacex-steps__line">
+        <div class="spacex-steps__item"
+             :class="{ 'spacex-steps__item--active': $store.steps.active == 3, 'spacex-steps__item--completed': $store.steps.active > 3 }">
+            <span class="spacex-steps__item-number" data-number="3">
+                {% include "svg/_spacex_step_3.html" with svg_css_class="spacex-steps__item-icon" %}
+            </span>
+            <span class="spacex-steps__item-text">3. Life Insurance</span>
+        </div>
+        <hr class="spacex-steps__line">
+        <div class="spacex-steps__item"
+             :class="{ 'spacex-steps__item--active': $store.steps.active == 4, 'spacex-steps__item--completed': $store.steps.active > 4 }">
+            <span class="spacex-steps__item-number" data-number="4">
+                {% include "svg/_spacex_step_4.html" with svg_css_class="spacex-steps__item-icon" %}
+            </span>
+            <span class="spacex-steps__item-text pb-0">4. Boarding Pass</span>
+        </div>
+    </div>
+</nav>

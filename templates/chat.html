@@ -1,0 +1,35 @@
+{% extends 'layout/base.html' %}
+
+{% load humanize static %}
+
+{% block meta %}
+    {# djlint:off #}
+    {% meta_tags title="Case Study: SpaceX Insurance Calculator" description="Our web development firm created an insurance calculator for SpaceX to offer accurate quotes for future space tourists." image="https://us-southeast-1.linodeobjects.com/axiacore/redactorfile/909c4632dae841f299dd38aea52dc0a4/spacex-case-study-thumbnail.jpg" %}
+    {# djlint:on #}
+{% endblock %}
+
+{% block body %}
+    <div @load.window="windowLoaded = true;" class="text-white bg-gray-950" x-data="{ windowLoaded: false }">
+        {% include "_bg.html" %}
+        <div class="grid grid-cols-[56px,1fr] grid-rows-[auto,1fr] w-full h-svh relative z-10">
+            <header class="flex items-center justify-between px-5 py-4 col-span-2">
+                <h2 class="sr-only">SpaceX</h2>
+                {% include "svg/_spacex_logo.html" with svg_css_class="block w-[110px] h-auto fill-white" %}
+                <p class="text-sm">Book trip</p>
+            </header>
+            {% include "_steps.html" %}
+            <main class="grow overflow-hidden relative">
+                {% include "_intro.html" %}
+                {% include "_chat.html" %}
+            </main>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script>
+        const CHAT_URL = '{% url "prototype" %}';
+        const START_QUESTION = 'Hello! What is your name?';
+    </script>
+    <script type="module" src="{% static 'js/spacex-chat.js' %}"></script>
+{% endblock %}

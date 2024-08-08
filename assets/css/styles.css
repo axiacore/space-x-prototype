@@ -1,0 +1,105 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+    @font-face {
+        font-family: 'Roboto Flex';
+        font-style: normal;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url('../../fonts/roboto-flex/roboto-flex.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    body {
+        @apply antialiased text-base font-roboto text-white bg-gray-950;
+    }
+}
+
+@layer components {
+    /* Steps */
+    .spacex-steps {
+        @apply flex flex-col-reverse items-center justify-between grow;
+    }
+    .spacex-steps__item {
+        @apply block;
+    }
+    .spacex-steps__item-number {
+        @apply block size-7 relative before:content-[attr(data-number)] before:flex before:items-center before:justify-center before:size-4 before:rounded-full before:bg-spacex-gray-950 before:text-[12px] before:font-bold before:text-center before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2;
+    }
+    .spacex-steps__item-icon {
+        @apply block size-full fill-white;
+    }
+    .spacex-steps__item-text {
+        @apply hidden py-4 text-sm font-medium [writing-mode:vertical-lr] rotate-180;
+    }
+    .spacex-steps__line {
+        @apply block w-px border-y-0 border-r-0 border-l border-dotted border-white/20 grow;
+    }
+
+    .spacex-steps__item--active .spacex-steps__item-number {
+        @apply hidden;
+    }
+    .spacex-steps__item--active .spacex-steps__item-text {
+        @apply block;
+    }
+    .spacex-steps__item--active + .spacex-steps__line,
+    .spacex-steps__item--completed + .spacex-steps__line {
+        @apply border-solid;
+    }
+    .spacex-steps__item--completed .spacex-steps__item-number {
+        @apply before:hidden;
+    }
+
+    /* BG Glass */
+    .bg-glass {
+        @apply bg-white/5 backdrop-blur;
+    }
+
+    /* Buttons */
+    .spacex-btn {
+        @apply inline-flex items-center justify-center px-2.5 py-1.5 text-sm font-semibold rounded-full cursor-pointer transition-colors duration-500 ease-in-out;
+    }
+    .spacex-btn__svg {
+        @apply block size-6 fill-current;
+    }
+    .spacex-btn--icon {
+        @apply p-2;
+    }
+    .spacex-btn--primary {
+        @apply text-white bg-spacex-primary-600 hover:bg-spacex-primary-700;
+    }
+    .spacex-btn--secondary {
+        @apply text-spacex-primary-600 bg-spacex-primary-50 hover:bg-spacex-primary-200;
+    }
+
+    /* Chat */
+    .chat-item {
+        @apply flex items-start gap-2 w-full max-w-[500px] px-4 mx-auto first-of-type:mt-auto;
+    }
+    .chat-item__avatar {
+        @apply size-8 sm:size-12 rounded-full bg-spacex-primary-100 shrink-0 border border-spacex-gray-100;
+    }
+    .chat-item__content {
+        @apply block px-4 py-3 w-auto max-w-[calc(100%_-_40px)] sm:max-w-[calc(80%_-_56px)] min-w-[30%] bg-glass space-y-2 rounded-2xl text-base;
+    }
+
+    .chat-item--apollo {
+        @apply justify-start;
+    }
+    .chat-item--apollo .chat-item__content {
+        @apply w-[calc(100%_-_40px)] sm:w-[calc(80%_-_56px)] rounded-tl-none;
+    }
+
+    .chat-item--person {
+        @apply justify-end;
+    }
+    .chat-item--person .chat-item__avatar {
+        @apply order-2;
+    }
+    .chat-item--person .chat-item__content {
+        @apply rounded-tr-none;
+    }
+}

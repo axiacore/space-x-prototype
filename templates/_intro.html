@@ -1,0 +1,32 @@
+<div class="flex absolute inset-0" x-show="$store.steps.showIntro" x-transition.opacity>
+    <div class="w-4/5 max-w-[500px] mx-auto mt-auto mb-[20vh]">
+        <div class="space-y-2">
+            <div class="px-4 py-3 rounded-2xl text-base bg-glass"
+                 x-show="windowLoaded"
+                 x-transition:enter="transition ease-in-out duration-500 delay-250"
+                 x-transition:enter-start="translate-y-[80vh]"
+                 x-transition:enter-end="translate-y-0"
+                 x-cloak>You have been selected to join the mission.</div>
+            <div class="px-4 py-3 rounded-2xl text-base bg-glass"
+                 x-show="windowLoaded"
+                 x-transition:enter="transition ease-in-out duration-500 delay-[800ms]"
+                 x-transition:enter-start="translate-y-[80vh]"
+                 x-transition:enter-end="translate-y-0"
+                 x-cloak>Continue the process of getting your insurance on file.</div>
+            <div class="px-4 py-3 rounded-2xl text-base bg-glass"
+                 x-show="windowLoaded"
+                 x-transition:enter="transition ease-in-out duration-500 delay-[1300ms]"
+                 x-transition:enter-start="translate-y-[80vh]"
+                 x-transition:enter-end="translate-y-0"
+                 x-cloak>Click the button when you are ready to start.</div>
+        </div>
+        <button class="spacex-btn spacex-btn--primary flex mx-auto mt-4"
+                type="button"
+                x-show="windowLoaded"
+                x-transition:enter="transition ease-in-out duration-500 delay-[1800ms]"
+                x-transition:enter-start="translate-y-[80vh]"
+                x-transition:enter-end="translate-y-0"
+                x-cloak
+                @click="$store.steps.loadChat()">I'm ready</button>
+    </div>
+</div>
