@@ -7,7 +7,6 @@ How much life insurance will cost for a trip to space? At [Axiacore](https://axi
 🎥 Watch how it works: https://www.loom.com/share/f7c36ee573784920af5b7878e18214b4
 
 ## Overview
-------------
 
 The SpaceX Travel Insurance Prototype is a conversational AI-powered chat that assesses a client's psychological and physical conditions to determine their fitness for space travel. The chat is designed to ask general questions that help identify potential risks and provide a personalized insurance policy.
 
@@ -17,8 +16,7 @@ To evaluate the client's psychological condition, the chat uses the short form o
 
 The chat's assessment results are then fed into our custom InsuranceCalculator service, which uses the collected data to calculate a unique insurance value for each client. This value is based on the client's individual physical and psychological conditions, as well as other factors relevant to space travel. 
 
-## Running the Prototype
--------------------------
+## Running
 
 ### Python Packages
 We use [rye](https://rye.astral.sh/) for Python packages. Follow the installation instructions [here](https://rye.astral.sh/guide/installation/#installing-rye).
@@ -40,18 +38,11 @@ pnpm install && rye run python manage.py tailwind start
 ```
 
 ### Requirements
-----------------
 
-* An Openia account to add the `OPENAI_API_KEY` to the `settings.py` file.
+* An OpenAI account to add the `OPENAI_API_KEY` to the `settings.py` file.
 * A `SECRET_KEY` in the `settings.py` file.
 
-## Main Technologies
---------------------
-
-Here's an improved version of the "Main Technologies" section:
-
-## Main Technologies
---------------------
+## Tech Stack
 
 ### Django
 We use Django, a high-level Python web framework, as the foundation of our web application. Django provides a robust and scalable architecture, allowing us to quickly develop and deploy our prototype. Its modular design and extensive library of third-party packages make it an ideal choice for building complex web applications.
